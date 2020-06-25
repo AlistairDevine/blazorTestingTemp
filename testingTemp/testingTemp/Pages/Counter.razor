@@ -1,10 +1,52 @@
 ﻿@page "/counter"
+@using testingTemp.Models
+@using System.Diagnostics
 
 <h1>Counter</h1>
 
 <p>Current count: @currentCount</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<div class="row">
+    <div class="col-md-4">
+        <EditForm Model="@repair" OnValidSubmit="@ValidSubmit">
+            <DataAnnotationsValidator />
+            
+
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <InputText id="name" @bind-Value="repair.Name" class="form-control" />
+                <ValidationMessage For="@(() => repair.Name)" />
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Job notes:</label>
+                <InputText id="notes" @bind-Value="repair.Notes" class="form-control" />
+                <ValidationMessage For="@(() => repair.Notes)" />
+            </div>
+
+            <div class="form-group">
+                <label for="trade">Type of work:</label>
+                <InputSelect id="trade" type="text" @bind-Value="repair.Trade" >
+                    <option value="">--Select Trade--</option>
+                    <option value="Carpenter">Carpenter</option>
+                    <option value="Electrician">Electrician</option>
+                    <option value="Gas">Gas</option>
+                    <option value="Plumber">Plumber</option>
+                </InputSelect>
+                <ValidationMessage For="@(() => repair.Trade)" />
+            </div>
+
+            <div class="form-group">
+                <label for="hours">Hours worked:</label>
+                <InputText id="hours" @bind-Value="repair.Hours" class="form-control" />
+                <ValidationMessage For="@(() => repair.Hours)" />
+            </div>
+
+            <button type="submit">Save.</button>
+        </EditForm>
+    </div>
+</div>
 
 @code {
     private int currentCount = 0;
@@ -12,5 +54,18 @@
     private void IncrementCount()
     {
         currentCount++;
+    }
+
+    private RepairForm repair = new RepairForm
+    {
+        Name = "John",
+        Notes = "Sink, shower and toilet are broken.",
+        Trade = "Plumber",
+        Hours = "2"
+    };
+
+    private void ValidSubmit()
+    {
+        Debug.WriteLine("ValidSubmit");
     }
 }
