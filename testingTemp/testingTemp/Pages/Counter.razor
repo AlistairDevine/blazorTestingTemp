@@ -1,6 +1,7 @@
 ﻿@page "/counter"
 @using testingTemp.Models
 @using System.Diagnostics
+@inject IJSRuntime JsRuntime
 
 <h1>Counter</h1>
 
@@ -21,7 +22,7 @@
 
             <div class="form-group">
                 <label for="notes">Job notes:</label>
-                <InputText id="notes" @bind-Value="repair.Notes" class="form-control" />
+                <InputTextArea id="notes" @bind-Value="repair.Notes" class="form-control" />
                 <ValidationMessage For="@(() => repair.Notes)" />
             </div>
 
@@ -45,6 +46,10 @@
 
             <button type="submit">Save.</button>
         </EditForm>
+
+        <div>
+            <span id="resultJson"></span>
+        </div>
     </div>
 </div>
 
@@ -68,4 +73,5 @@
     {
         Debug.WriteLine("ValidSubmit");
     }
+
 }

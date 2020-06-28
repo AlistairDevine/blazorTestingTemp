@@ -1,25 +1,32 @@
-using System;
+using EndToEndDB.Data.EndToEnd;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace testingTemp.Data
+
+namespace EndToEnd.Data
 {
     public class WeatherForecastService
     {
-        private static readonly string[] Summaries = new[]
+        private readonly EndtoEndContext _context;
+        public WeatherForecastService(EndtoEndContext context)
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+            _context = context;
+        }
 
-        public Task<WeatherForecast[]> GetForecastAsync(DateTime startDate)
+        public Task<List<WeatherForecast>>
+            GetForecastsAsync(string strCurrentUser)
         {
-            var rng = new Random();
-            return Task.FromResult(Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = startDate.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            }).ToArray());
+            List<WeatherForecast> colWeatherForecasts =
+                new List<WeatherForecast>();
+            //Get Weather Forecasts
+            colWeatherForecasts =
+                (from weatherForecast in _context.WeatherForecast
+                     //only get entries for the current logged in user
+                 where weatherForecast.UserName == strCurrentUser
+                 select weatherForecast).ToList();
+
+            return Task.FromResult(colWeatherForecasts);
         }
     }
 }
