@@ -2,12 +2,15 @@
 @using testingTemp.Models
 @using System.Diagnostics
 @inject IJSRuntime JsRuntime
+@inject CounterState CounterState
 
 <h1>Counter</h1>
-
-<p>Current count: @currentCount</p>
+<!--State management now call the GetCurrentCount() method to get the current count-->
+<p>Current count: @CounterState.GetCurrentCount()</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<br />
+
 <div class="row">
     <div class="col-md-4">
         <EditForm Model="@repair" OnValidSubmit="@ValidSubmit">
@@ -58,7 +61,12 @@
 
     private void IncrementCount()
     {
-        currentCount++;
+        //Session State management calls the GetCurrentCount method for the current count
+        int CurrentCount = CounterState.GetCurrentCount();
+        //Increment the counter
+        CurrentCount++;
+        //Set Current count on the Session State object
+        CounterState.SetCurrentCount(CurrentCount);
     }
 
     private RepairForm repair = new RepairForm

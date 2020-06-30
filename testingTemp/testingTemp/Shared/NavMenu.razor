@@ -1,4 +1,7 @@
-﻿<div class="top-row pl-4 navbar navbar-dark">
+﻿@inject CounterState CounterState
+@implements IDisposable
+
+<div class="top-row pl-4 navbar navbar-dark">
     <a class="navbar-brand" href="">testingTemp</a>
     <button class="navbar-toggler" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
@@ -23,6 +26,10 @@
             </NavLink>
         </li>
     </ul>
+    <div>
+        <!--Call the GetCurrentCount() method to get the current count-->
+        <p style="color:white">Current Count: @CounterState.GetCurrentCount()</p>
+    </div>
 </div>
 
 @code {
@@ -34,4 +41,26 @@
     {
         collapseNavMenu = !collapseNavMenu;
     }
+
+    /// <summary>
+    /// Session state management, Event Handler and IDisposable
+    /// </summary>
+
+    //This method is called when the control is initialised
+    protected override void OnInitialized()
+    {
+        //Subscribe to the StateChanged EventHandler
+        CounterState.StateChanged += OnCounterStateAdvancedStateChange;
+    }
+
+    //This method is fired when the CounterState object invokes its StateHasChanged() method
+    //This will cause this control to invoke its own StateHasChanged() method. Refreshing the page and displaying the updated counter value
+    void OnCounterStateAdvancedStateChange(object sender, EventArgs e) => StateHasChanged();
+
+    void IDisposable.Dispose()
+    {
+        //When this control is disposed of unscribe from the StateChanged EventHandler
+        CounterState.StateChanged -= OnCounterStateAdvancedStateChange;
+    }
+
 }
