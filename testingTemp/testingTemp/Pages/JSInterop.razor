@@ -1,0 +1,24 @@
+﻿@page "/jsinterop"
+
+@*Inject JSRuntime to allow JavaScript Interop *@
+@inject IJSRuntime JSRuntime
+
+<h1>JavaScript Interop</h1>
+
+<div>
+    <button type="button"
+            class="btn btn-primary"
+            @onclick="HelloWorld">
+        Hello World
+    </button>
+</div>
+@code {
+    public async void HelloWorld()
+    {
+        // helloWorld is implemented in
+        // wwwroot /exampleJsInterop.js
+        await JSRuntime.InvokeAsync<string>(
+            "exampleJsFunctions.helloWorld", null
+            );
+    }
+}

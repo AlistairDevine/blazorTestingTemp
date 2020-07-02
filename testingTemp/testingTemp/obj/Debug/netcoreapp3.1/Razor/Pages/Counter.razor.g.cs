@@ -80,6 +80,13 @@ using testingTemp.SessionState;
 #line hidden
 #nullable disable
 #nullable restore
+#line 11 "C:\Users\Dvine\Documents\GitHub\blazorTestingTemp\testingTemp\testingTemp\_Imports.razor"
+using ChartJs.Blazor;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "C:\Users\Dvine\Documents\GitHub\blazorTestingTemp\testingTemp\testingTemp\Pages\Counter.razor"
 using testingTemp.Models;
 
