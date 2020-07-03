@@ -1,0 +1,38 @@
+﻿@page "/tempcomp"
+
+<h3>Book table</h3>
+
+@if (bookList != null)
+{
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+    <table class="table table-bordered table-striped mb-0" style="width:100%">
+        <thead class="bg-light">
+            <tr>
+                <th>Book:</th>
+                <th>Overview:</th>
+                <th>View.</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in bookList)
+            {
+                <tr>
+                    @book
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+}
+else
+{
+    <p><em>Error Message...</em></p>
+}
+
+@code {
+
+    public int Id { get; set; }
+    public string[] bookList = { "Harry Porter", "Game of Thrones", "Lord of the Rings" };
+    public string Title { get; set; }
+    public string Overview { get; set; }
+}

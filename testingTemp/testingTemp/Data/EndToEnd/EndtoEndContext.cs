@@ -16,10 +16,23 @@ namespace EndToEndDB.Data.EndToEnd
         {
         }
 
+        public virtual DbSet<BookData> BookData { get; set; }
         public virtual DbSet<WeatherForecast> WeatherForecast { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<BookData>(entity =>
+            {
+                entity.HasKey(e => e.BookId)
+                    .HasName("PK__BookData__3DE0C2076FDAE340");
+
+                entity.Property(e => e.BookAuthor).HasMaxLength(50);
+
+                entity.Property(e => e.BookDescription).HasMaxLength(50);
+
+                entity.Property(e => e.BookTitle).HasMaxLength(50);
+            });
+
             modelBuilder.Entity<WeatherForecast>(entity =>
             {
                 entity.Property(e => e.Date).HasColumnType("datetime");

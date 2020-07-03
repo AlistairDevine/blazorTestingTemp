@@ -44,6 +44,7 @@ namespace testingTemp
             services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
             //Scoped creates an instance for each user
             services.AddScoped<WeatherForecastService>();
+            services.AddScoped<BookDataService>();
             services.AddScoped<CounterState>();
         }
 
