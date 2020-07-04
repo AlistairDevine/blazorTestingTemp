@@ -31,6 +31,8 @@ namespace EndToEndDB.Data.EndToEnd
                 entity.Property(e => e.BookDescription).HasMaxLength(50);
 
                 entity.Property(e => e.BookTitle).HasMaxLength(50);
+
+                entity.Property(e => e.UserName).HasMaxLength(50);
             });
 
             modelBuilder.Entity<WeatherForecast>(entity =>

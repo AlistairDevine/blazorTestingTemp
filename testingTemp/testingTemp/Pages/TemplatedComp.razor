@@ -1,38 +1,159 @@
 ﻿@page "/tempcomp"
 
+@using EndToEnd.Data
+@using EndToEndDB.Data.EndToEnd
+
+@inject AuthenticationStateProvider Auth
+
+@inherits OwningComponentBase<BookDataService>
+
 <h3>Book table</h3>
 
-@if (bookList != null)
-{
-<div class="table-wrapper-scroll-y my-custom-scrollbar">
-    <table class="table table-bordered table-striped mb-0" style="width:100%">
-        <thead class="bg-light">
-            <tr>
-                <th>Book:</th>
-                <th>Overview:</th>
-                <th>View.</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var book in bookList)
-            {
-                <tr>
-                    @book
-                </tr>
-            }
-        </tbody>
-    </table>
-</div>
-}
-else
-{
-    <p><em>Error Message...</em></p>
-}
+<AuthorizeView>
+    <Authorized>
+        <h4>Hello, @context.User.Identity.Name.</h4>
+        <br />
+        <p>
+            <!--Add new book-->
+            <button class="btn btn-primary" @onclick="AddNewBook">
+                Add New Book
+            </button>
+        </p>
+
+        @if (booksData == null)
+        {
+            <!--Show this if the current user has no book data-->
+            <p><em>Error Message...</em></p>
+        }
+        else
+        {
+            <!--Show the book data for the current user-->
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <table class="table table-bordered table-striped mb-0" style="width:100%">
+                    <thead class="bg-light">
+                        <tr>
+                            <th>Book:</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Author</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var book in booksData)
+                        {
+                            <tr>
+                                <td>@book.BookTitle</td>
+                                <td>@book.BookDescription</td>
+                                <td>@book.BookPrice</td>
+                                <td>@book.BookAuthor</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+
+        @if (ShowPopup)
+        {
+            <!--This is the popup to create or edit a book data-->
+            <div class="modal" tabindex="-1" style="display:block" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title">Edit Book</h3>
+                            <!--Button to close the popup-->
+                            <button type="button" class="close" @onclick="ClosePopup">
+                                <span aria-hidden="true">X</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <input class="form-control" type="text" placeholder="BookTitle" @bind="objBookData.BookTitle" />
+                            <input class="form-control" type="text" placeholder="BookDescription" @bind="objBookData.BookDescription" />
+                            <input class="form-control" type="text" placeholder="BookPrice" @bind="objBookData.BookPrice" />
+                            <input class="form-control" type="text" placeholder="BookAuthor" @bind="objBookData.BookAuthor" />
+                            <br />
+                            <!--Button to save the book-->
+                            <buton class="btn btn-primary" @onclick="SaveBook">
+                                Save
+                            </buton>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </Authorized>
+    <!--Show this section if the user is not logged in-->
+    <NotAuthorized>
+
+        <p><em>Sign In for more information</em></p>
+
+        <!--Display the books title list only-->
+
+    </NotAuthorized>
+</AuthorizeView>
 
 @code {
 
-    public int Id { get; set; }
-    public string[] bookList = { "Harry Porter", "Game of Thrones", "Lord of the Rings" };
-    public string Title { get; set; }
-    public string Overview { get; set; }
+    //Authentication is available as a CascadingParameter
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    List<BookData> booksData;
+
+    BookData objBookData = new BookData();
+
+    bool ShowPopup = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        //Get the current user
+        var user = (await authenticationStateTask).User;
+        //Get the book data for the current user
+        //We access BookDataService using @Service
+        booksData = await Service.GetBookAsync(user.Identity.Name);
+    }
+
+    void ClosePopup()
+    {
+        //Close the popup
+        ShowPopup = false;
+    }
+
+    void AddNewBook()
+    {
+        //Make new book
+        objBookData = new BookData();
+        //Set Id to 0 so we know it is a new record
+        objBookData.BookId = 0;
+        //Open the popup
+        ShowPopup = true;
+    }
+
+    async Task SaveBook()
+    {
+        //Close popup
+        ShowPopup = false;
+        //Get the current user
+        var user = (await authenticationStateTask).User;
+        //A new book will have the Id set to 0
+        if (objBookData.BookId == 0)
+        {
+            //Create new book
+            BookData objNewBookData = new BookData();
+            objNewBookData.BookTitle = objBookData.BookTitle;
+            objNewBookData.BookDescription = objBookData.BookDescription;
+            objNewBookData.BookPrice = Convert.ToInt32(objBookData.BookPrice);
+            objNewBookData.BookAuthor = objBookData.BookAuthor;
+            objNewBookData.UserName = user.Identity.Name;
+
+            //Save the result
+            var result = Service.CreateBookAsync(objNewBookData);
+        }
+        else
+        {
+            //This is an update
+        }
+        //Get the books for the current user
+        booksData = await Service.GetBookAsync(user.Identity.Name);
+    }
 }

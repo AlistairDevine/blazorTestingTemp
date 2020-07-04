@@ -11,5 +11,6 @@ namespace EndToEndDB.Data.EndToEnd
         public string BookDescription { get; set; }
         public int? BookPrice { get; set; }
         public string BookAuthor { get; set; }
+        public string UserName { get; set; }
     }
 }
