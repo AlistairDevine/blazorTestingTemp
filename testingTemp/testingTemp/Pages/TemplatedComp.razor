@@ -27,9 +27,10 @@
         }
         else
         {
+            @*
             <!--Show the book data for the current user-->
             <div class="table-wrapper-scroll-y my-custom-scrollbar">
-                <table class="table table-bordered table-striped mb-0" style="width:100%">
+                <table class="table table-bordered table-striped mb-0" style="width:50%">
                     <thead class="bg-light">
                         <tr>
                             <th>Book:</th>
@@ -51,6 +52,22 @@
                     </tbody>
                 </table>
             </div>
+            *@
+
+            <TableTemplate Items="booksData">
+                <TableHeader>
+                    <th>Book:</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Author</th>
+                </TableHeader>
+                <RowTemplate Context="book">
+                    <td>@book.BookTitle</td>
+                    <td>@book.BookDescription</td>
+                    <td>@book.BookPrice</td>
+                    <td>@book.BookAuthor</td>
+                </RowTemplate>
+            </TableTemplate>
         }
 
         @if (ShowPopup)

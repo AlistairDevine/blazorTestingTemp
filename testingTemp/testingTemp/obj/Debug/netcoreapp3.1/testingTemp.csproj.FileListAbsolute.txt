@@ -182,3 +182,5 @@ C:\Users\Dvine\Documents\GitHub\blazorTestingTemp\testingTemp\testingTemp\obj\De
 C:\Users\Dvine\Documents\GitHub\blazorTestingTemp\testingTemp\testingTemp\obj\Debug\netcoreapp3.1\Razor\Pages\JSInterop.razor.g.cs
 C:\Users\Dvine\Documents\GitHub\blazorTestingTemp\testingTemp\testingTemp\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\TemplatedComp.razor.g.cs
 C:\Users\Dvine\Documents\GitHub\blazorTestingTemp\testingTemp\testingTemp\obj\Debug\netcoreapp3.1\Razor\Pages\TemplatedComp.razor.g.cs
+C:\Users\Dvine\Documents\GitHub\blazorTestingTemp\testingTemp\testingTemp\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\TableTemplate.razor.g.cs
+C:\Users\Dvine\Documents\GitHub\blazorTestingTemp\testingTemp\testingTemp\obj\Debug\netcoreapp3.1\Razor\Shared\TableTemplate.razor.g.cs

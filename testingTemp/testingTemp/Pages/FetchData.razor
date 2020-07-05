@@ -73,6 +73,7 @@
                         <th>Temp. (C)</th>
                         <th>Temp. (F)</th>
                         <th>Summary</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -83,10 +84,12 @@
                             <td>@forecast.TemperatureC</td>
                             <td>@forecast.TemperatureF</td>
                             <td>@forecast.Summary</td>
-                            <!--Edit the current forecast-->
-                            <button class="btn btn-primary" @onclick="(() => EditForecast(forecast))">
-                                Edit
-                            </button>
+                            <td>
+                                <!--Edit the current forecast-->
+                                <button class="btn btn-primary" @onclick="(() => EditForecast(forecast))">
+                                    Edit
+                                </button>
+                            </td>
                         </tr>
                     }
                 </tbody>
