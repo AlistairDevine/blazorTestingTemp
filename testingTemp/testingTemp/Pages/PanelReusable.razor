@@ -1,0 +1,21 @@
+﻿<h3>PanelReusable</h3>
+
+<div class="bg-danger m-2">
+    <div class="bg-dark text-white text-2x1 p-2 font-weight-bold text-center">
+        @Title
+    </div>
+    <div class="p-6">
+        @childContent
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public RenderFragment childContent { get; set; }
+
+    [Parameter]
+    public string TitleStyle { get; set; }
+}
