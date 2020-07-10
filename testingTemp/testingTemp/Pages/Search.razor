@@ -1,0 +1,33 @@
+﻿@page "/search"
+
+@using Syncfusion.Blazor.DropDowns
+
+<h3>Search Example</h3>
+
+
+<div class="control-wrapper">
+    <SfAutoComplete TValue="string" TItem="UrlFields" Placeholder="Enter website" DataSource="Urls" ShowPopupButton="true" Highlight="true">
+        <AutoCompleteFieldSettings Value="Text"></AutoCompleteFieldSettings>
+    </SfAutoComplete>
+</div>
+<style>
+    .control-wrapper {
+        width: 500px;
+        margin: 0 auto;
+        padding-top: 70px;
+    }
+</style>
+@code {
+
+    public class UrlFields
+    {
+        public string Id { get; set; }
+        public string Text { get; set; }
+    }
+    public List<UrlFields> Urls = new List<UrlFields>()
+{
+        new UrlFields() {Id = "Url1", Text = "https://www.bbc.co.uk/news"},
+        new UrlFields() {Id = "Url2", Text = "https://www.theguardian.com/uk"},
+        new UrlFields() {Id = "Url3", Text = "https://www.telegraph.co.uk/"},
+    };
+}

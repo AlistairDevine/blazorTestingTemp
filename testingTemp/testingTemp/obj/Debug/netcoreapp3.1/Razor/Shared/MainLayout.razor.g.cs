@@ -86,6 +86,13 @@ using ChartJs.Blazor;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 12 "C:\Users\Dvine\Documents\GitHub\blazorTestingTemp\testingTemp\testingTemp\_Imports.razor"
+using Syncfusion.Blazor;
+
+#line default
+#line hidden
+#nullable disable
     public partial class MainLayout : LayoutComponentBase
     {
         #pragma warning disable 1998

@@ -17,6 +17,7 @@ using testingTemp.Areas.Identity;
 using testingTemp.Data;
 using EndToEnd.Data;
 using testingTemp.SessionState;
+using Syncfusion.Blazor;
 
 namespace testingTemp
 {
@@ -46,11 +47,13 @@ namespace testingTemp
             services.AddScoped<WeatherForecastService>();
             services.AddScoped<BookDataService>();
             services.AddScoped<CounterState>();
+            services.AddSyncfusionBlazor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjgzMjUyQDMxMzgyZTMyMmUzMG1iVG5YQ1pyRUNldjl1MXp6SjFTQ05jcmxyZGZVQ1B6VXQ4WWR6U0pDRjg9");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
