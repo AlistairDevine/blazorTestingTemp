@@ -1,0 +1,19 @@
+﻿@page "/map"
+@using EndToEnd.Data
+
+@inject NavigationManager navManager
+
+<h3>MapScreen: Query String Example</h3>
+
+<button class="btn btn-primary" @onclick="Navigate">Click</button>
+
+@code {
+
+    void Navigate()
+    {
+        var query = new Dictionary<string, string> { { "name", "Cadi" } };
+
+    }
+
+    
+}

@@ -1,8 +1,27 @@
 ﻿
 <CascadingAuthenticationState>
-    <Router AppAssembly="@typeof(Program).Assembly">
+<Router AppAssembly="@typeof(Program).Assembly">
+    <Found Context="routeData">
+        <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+    </Found>
+    <NotFound>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p>Sorry, there's nothing at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
+</CascadingAuthenticationState>
+@*
+<Router AppAssembly="@typeof(Program).Assembly">
         <Found Context="routeData">
-            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+            <LayoutView Layout="@typeof(MainLayout)">
+                <TransitionableRoutePrimary RouteData="@routeData">
+                    <TransitionableRouteView DefaultLayout="@typeof(MainLayout)" />
+                </TransitionableRoutePrimary>
+                <TransitionableRouteSecondary RouteData="@routeData">
+                    <TransitionableRouteView DefaultLayout="@typeof(MainLayout)"/>
+                </TransitionableRouteSecondary>
+            </LayoutView>
         </Found>
         <NotFound>
             <LayoutView Layout="@typeof(MainLayout)">
@@ -10,4 +29,4 @@
             </LayoutView>
         </NotFound>
     </Router>
-</CascadingAuthenticationState>
+    *@

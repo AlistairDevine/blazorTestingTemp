@@ -1,0 +1,43 @@
+﻿@page "/http"
+
+@using testingTemp.Shared.Models
+@inject Services.ApiService apiService
+
+<h3>HttpClient Example</h3>
+
+@if (contacts == null)
+{
+    <p><em>Loading ...</em></p>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Id: </th>
+                <th>Name: </th>
+                <th>Phone Number: </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var contact in contacts)
+            {
+                <tr>
+                    <td>@contact.Id</td>
+                    <td>@contact.Name</td>
+                    <td>@contact.PhoneNumber</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@code {
+    List<Contact> contacts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        contacts = await apiService.GetContactsAsync();
+    }
+}

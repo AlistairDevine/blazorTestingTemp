@@ -1,5 +1,6 @@
 ﻿<StaticWebAssets Version="1.0">
-  <ContentRoot BasePath="/Identity" Path="C:\Users\Dvine\.nuget\packages\microsoft.aspnetcore.identity.ui\3.1.5\staticwebassets\V4\" />
-  <ContentRoot BasePath="_content/ChartJs.Blazor" Path="C:\Users\Dvine\.nuget\packages\chartjs.blazor\1.1.0\build\..\staticwebassets\" />
-  <ContentRoot BasePath="_content/Syncfusion.Blazor" Path="C:\Users\Dvine\.nuget\packages\syncfusion.blazor\18.2.0.44\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/Identity" Path="C:\Users\alist\.nuget\packages\microsoft.aspnetcore.identity.ui\3.1.5\staticwebassets\V4\" />
+  <ContentRoot BasePath="_content/BlazorTransitionableRoute" Path="C:\Users\alist\.nuget\packages\blazortransitionableroute\1.0.2\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/ChartJs.Blazor" Path="C:\Users\alist\.nuget\packages\chartjs.blazor\1.1.0\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/Syncfusion.Blazor" Path="C:\Users\alist\.nuget\packages\syncfusion.blazor\18.2.0.44\build\..\staticwebassets\" />
 </StaticWebAssets>

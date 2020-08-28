@@ -2,6 +2,25 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "BlazorTransitionableRoute/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "3.1.5",
+          "Microsoft.AspNetCore.Components.Web": "3.1.5"
+        },
+        "compile": {
+          "lib/netstandard2.0/BlazorTransitionableRoute.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/BlazorTransitionableRoute.dll": {}
+        },
+        "build": {
+          "buildTransitive/BlazorTransitionableRoute.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/BlazorTransitionableRoute.props": {}
+        }
+      },
       "ChartJs.Blazor/1.1.0": {
         "type": "package",
         "dependencies": {
@@ -29,12 +48,12 @@
           "buildMultiTargeting/ChartJs.Blazor.props": {}
         }
       },
-      "Microsoft.AspNetCore.Authorization/3.1.4": {
+      "Microsoft.AspNetCore.Authorization/3.1.5": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Metadata": "3.1.4",
-          "Microsoft.Extensions.Logging.Abstractions": "3.1.4",
-          "Microsoft.Extensions.Options": "3.1.4"
+          "Microsoft.AspNetCore.Metadata": "3.1.5",
+          "Microsoft.Extensions.Logging.Abstractions": "3.1.5",
+          "Microsoft.Extensions.Options": "3.1.5"
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Authorization.dll": {}
@@ -43,12 +62,12 @@
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Authorization.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Components/3.1.4": {
+      "Microsoft.AspNetCore.Components/3.1.5": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Authorization": "3.1.4",
-          "Microsoft.AspNetCore.Components.Analyzers": "3.1.4",
-          "Microsoft.JSInterop": "3.1.4"
+          "Microsoft.AspNetCore.Authorization": "3.1.5",
+          "Microsoft.AspNetCore.Components.Analyzers": "3.1.5",
+          "Microsoft.JSInterop": "3.1.5"
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Components.dll": {}
@@ -57,16 +76,16 @@
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Components.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Components.Analyzers/3.1.4": {
+      "Microsoft.AspNetCore.Components.Analyzers/3.1.5": {
         "type": "package",
         "build": {
           "buildTransitive/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets": {}
         }
       },
-      "Microsoft.AspNetCore.Components.Forms/3.1.4": {
+      "Microsoft.AspNetCore.Components.Forms/3.1.5": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Components": "3.1.4"
+          "Microsoft.AspNetCore.Components": "3.1.5"
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Components.Forms.dll": {}
@@ -75,13 +94,13 @@
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Components.Forms.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Components.Web/3.1.4": {
+      "Microsoft.AspNetCore.Components.Web/3.1.5": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Components": "3.1.4",
-          "Microsoft.AspNetCore.Components.Forms": "3.1.4",
-          "Microsoft.Extensions.DependencyInjection": "3.1.4",
-          "Microsoft.JSInterop": "3.1.4"
+          "Microsoft.AspNetCore.Components": "3.1.5",
+          "Microsoft.AspNetCore.Components.Forms": "3.1.5",
+          "Microsoft.Extensions.DependencyInjection": "3.1.5",
+          "Microsoft.JSInterop": "3.1.5"
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Components.Web.dll": {}
@@ -221,7 +240,7 @@
           "buildMultiTargeting/Microsoft.AspnetCore.Identity.UI.targets": {}
         }
       },
-      "Microsoft.AspNetCore.Metadata/3.1.4": {
+      "Microsoft.AspNetCore.Metadata/3.1.5": {
         "type": "package",
         "compile": {
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Metadata.dll": {}
@@ -881,7 +900,7 @@
           "lib/netcoreapp2.1/Microsoft.Identity.Client.dll": {}
         }
       },
-      "Microsoft.JSInterop/3.1.4": {
+      "Microsoft.JSInterop/3.1.5": {
         "type": "package",
         "compile": {
           "lib/netcoreapp3.1/Microsoft.JSInterop.dll": {}
@@ -2131,6 +2150,15 @@
           "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
         }
       },
+      "System.Text.Json/4.7.2": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/System.Text.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Text.Json.dll": {}
+        }
+      },
       "System.Text.RegularExpressions/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2273,10 +2301,41 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "testingTemp.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.7.0",
+          "System.Text.Json": "4.7.2"
+        },
+        "compile": {
+          "bin/placeholder/testingTemp.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/testingTemp.Shared.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "BlazorTransitionableRoute/1.0.2": {
+      "sha512": "imHlljjw2aLcfZwqMlvMTyUROV4/wQ2lJqOMdcNCjExq3erE1VSel7AglyzNvOIDJYrNq+iy/KE3kvAHljR6Vg==",
+      "type": "package",
+      "path": "blazortransitionableroute/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "blazortransitionableroute.1.0.2.nupkg.sha512",
+        "blazortransitionableroute.nuspec",
+        "build/BlazorTransitionableRoute.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/BlazorTransitionableRoute.props",
+        "buildTransitive/BlazorTransitionableRoute.props",
+        "lib/netstandard2.0/BlazorTransitionableRoute.dll",
+        "staticwebassets/jsInterop.js"
+      ]
+    },
     "ChartJs.Blazor/1.1.0": {
       "sha512": "MUGYzS5FSx9r17sPVRlREPWU+1mFtggFaQtGKifQg30I48tx3OEDH3JZd07r+jKwtpN/h89HVUYy3IT2FS8ZEw==",
       "type": "package",
@@ -2307,10 +2366,10 @@
         "staticwebassets/tsconfig.json"
       ]
     },
-    "Microsoft.AspNetCore.Authorization/3.1.4": {
-      "sha512": "uIHoOU15To1V1XbYwYHStke+gtKSormPtrgEqI9i8+kslM/0YJXraLPe1ygFZk+mH459s3Evns6QV1AZRcL90A==",
+    "Microsoft.AspNetCore.Authorization/3.1.5": {
+      "sha512": "llWJ7xChbfTKLxNs6Qny9ByrD4/lirRUDcKCj9E03Zd4wcRk1SuD/osOAUADfOtYBSKLu1bu4BLB9qt189HQ6g==",
       "type": "package",
-      "path": "microsoft.aspnetcore.authorization/3.1.4",
+      "path": "microsoft.aspnetcore.authorization/3.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2320,14 +2379,14 @@
         "lib/netcoreapp3.1/Microsoft.AspNetCore.Authorization.xml",
         "lib/netstandard2.0/Microsoft.AspNetCore.Authorization.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Authorization.xml",
-        "microsoft.aspnetcore.authorization.3.1.4.nupkg.sha512",
+        "microsoft.aspnetcore.authorization.3.1.5.nupkg.sha512",
         "microsoft.aspnetcore.authorization.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Components/3.1.4": {
-      "sha512": "C2NMPYO4k5LXh0GuoJiUyD5glWWRjWcIJe5x2DTbgLOLc1RZ0niE29AtDRTS3/GLKGYnkKgv7Z9NuGgVtTTWvg==",
+    "Microsoft.AspNetCore.Components/3.1.5": {
+      "sha512": "UR79oQq0QEDM8hscbv7TjP3WABM9r1J21HVmAtOk7xqRyT+BeJvt4D+b+ONserlEJoR4ZQHqPCpxIND1jcA1Vg==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components/3.1.4",
+      "path": "microsoft.aspnetcore.components/3.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2337,14 +2396,14 @@
         "lib/netcoreapp3.1/Microsoft.AspNetCore.Components.xml",
         "lib/netstandard2.0/Microsoft.AspNetCore.Components.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Components.xml",
-        "microsoft.aspnetcore.components.3.1.4.nupkg.sha512",
+        "microsoft.aspnetcore.components.3.1.5.nupkg.sha512",
         "microsoft.aspnetcore.components.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Components.Analyzers/3.1.4": {
-      "sha512": "c8XT1jQdaYU8uhCflsr/1pR3G8oixptho6IZFObUFSwWeZ8MVAZCbI3W4Jeex39rEknwcz0cFth+eA5UISbClg==",
+    "Microsoft.AspNetCore.Components.Analyzers/3.1.5": {
+      "sha512": "PiW80NL2i3TttQuPbNVXH5O9kJxIBZ6ctcQJ2prlSEDR73bG5G+JaTOyOrEIS4saLVZZ5Ww0u37E8rWMdlfcjg==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components.analyzers/3.1.4",
+      "path": "microsoft.aspnetcore.components.analyzers/3.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2353,14 +2412,14 @@
         "analyzers/dotnet/cs/Microsoft.AspNetCore.Components.Analyzers.dll",
         "build/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets",
         "buildTransitive/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets",
-        "microsoft.aspnetcore.components.analyzers.3.1.4.nupkg.sha512",
+        "microsoft.aspnetcore.components.analyzers.3.1.5.nupkg.sha512",
         "microsoft.aspnetcore.components.analyzers.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Components.Forms/3.1.4": {
-      "sha512": "uz78GZoEh91g/xmy7RL+8CZAM5hPRbJhXbfTFc6BikvRBPgEU0Gx2T6NCGpnKnd+60jJuCbH3QL6BIQrC1PkMA==",
+    "Microsoft.AspNetCore.Components.Forms/3.1.5": {
+      "sha512": "TBtncVssmSf6ZwiFerJnIGH3oON/d5RL9BGdMbDIGfZrpkEnMasLHXoruwKBO2xuMXiWpdLHcjIYa84APMYqig==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components.forms/3.1.4",
+      "path": "microsoft.aspnetcore.components.forms/3.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2370,14 +2429,14 @@
         "lib/netcoreapp3.1/Microsoft.AspNetCore.Components.Forms.xml",
         "lib/netstandard2.0/Microsoft.AspNetCore.Components.Forms.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Components.Forms.xml",
-        "microsoft.aspnetcore.components.forms.3.1.4.nupkg.sha512",
+        "microsoft.aspnetcore.components.forms.3.1.5.nupkg.sha512",
         "microsoft.aspnetcore.components.forms.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Components.Web/3.1.4": {
-      "sha512": "/t7ibFcyoXRDf5DE6Tx5evy+KQgaKzCGQeq8aiLR/4ujegUKWJVZaOxS+EwwZ44FEfWkyZTCZDGIdQyIdh5fZA==",
+    "Microsoft.AspNetCore.Components.Web/3.1.5": {
+      "sha512": "slvOyS5OZa/fSjZ1Ry9WKyYDT8Y8sVELIByGO7YlxLIO9sx1V7FdzQ/uQezEyuIdtg52ze/rYSUfeelurWxMPQ==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components.web/3.1.4",
+      "path": "microsoft.aspnetcore.components.web/3.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2387,7 +2446,7 @@
         "lib/netcoreapp3.1/Microsoft.AspNetCore.Components.Web.xml",
         "lib/netstandard2.0/Microsoft.AspNetCore.Components.Web.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Components.Web.xml",
-        "microsoft.aspnetcore.components.web.3.1.4.nupkg.sha512",
+        "microsoft.aspnetcore.components.web.3.1.5.nupkg.sha512",
         "microsoft.aspnetcore.components.web.nuspec"
       ]
     },
@@ -2601,10 +2660,10 @@
         "staticwebassets/V4/lib/jquery/dist/jquery.min.map"
       ]
     },
-    "Microsoft.AspNetCore.Metadata/3.1.4": {
-      "sha512": "8P2GHgUdyWf8MnxGsF4iXzcPaefvTT3sx9FhEBaw+QtcctAfja018wQTg0VC9nXodc9t/Dc+6lO3Ar68W9IKIQ==",
+    "Microsoft.AspNetCore.Metadata/3.1.5": {
+      "sha512": "ef5fX0JirOko1qAtJ2BQ2p6ScWEHRBe6jKPp43aREPLITT6CdcxK1xzwY6zqp//gQxNRWyqpr9Jil6HzPl2iFQ==",
       "type": "package",
-      "path": "microsoft.aspnetcore.metadata/3.1.4",
+      "path": "microsoft.aspnetcore.metadata/3.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2614,7 +2673,7 @@
         "lib/netcoreapp3.1/Microsoft.AspNetCore.Metadata.xml",
         "lib/netstandard2.0/Microsoft.AspNetCore.Metadata.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Metadata.xml",
-        "microsoft.aspnetcore.metadata.3.1.4.nupkg.sha512",
+        "microsoft.aspnetcore.metadata.3.1.5.nupkg.sha512",
         "microsoft.aspnetcore.metadata.nuspec"
       ]
     },
@@ -3441,10 +3500,10 @@
         "ref/xamarinmac20/Microsoft.Identity.Client.xml"
       ]
     },
-    "Microsoft.JSInterop/3.1.4": {
-      "sha512": "/H4UIvThzlF43mCOYF0ShQ+S9MulW5f3J0rScgTH34Tk+3gRyBa3lM3zntIBB+9/jyHki3V9c7EZmAzhMlezdg==",
+    "Microsoft.JSInterop/3.1.5": {
+      "sha512": "qrNycVdXdMcTaIpEjmo4CIyyPdm5fmM37mTSAwJNcUXrtrXeLhDfe5Jpxj77OSQfMTl7iSOI8gqCzxWZdO+djA==",
       "type": "package",
-      "path": "microsoft.jsinterop/3.1.4",
+      "path": "microsoft.jsinterop/3.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3453,7 +3512,7 @@
         "lib/netcoreapp3.1/Microsoft.JSInterop.xml",
         "lib/netstandard2.0/Microsoft.JSInterop.dll",
         "lib/netstandard2.0/Microsoft.JSInterop.xml",
-        "microsoft.jsinterop.3.1.4.nupkg.sha512",
+        "microsoft.jsinterop.3.1.5.nupkg.sha512",
         "microsoft.jsinterop.nuspec"
       ]
     },
@@ -7249,6 +7308,28 @@
         "version.txt"
       ]
     },
+    "System.Text.Json/4.7.2": {
+      "sha512": "TcMd95wcrubm9nHvJEQs70rC0H/8omiSGGpU4FQ/ZA1URIqD4pjmFJh2Mfv1yH1eHgJDWTi2hMDXwTET+zOOyg==",
+      "type": "package",
+      "path": "system.text.json/4.7.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Text.Json.dll",
+        "lib/net461/System.Text.Json.xml",
+        "lib/netcoreapp3.0/System.Text.Json.dll",
+        "lib/netcoreapp3.0/System.Text.Json.xml",
+        "lib/netstandard2.0/System.Text.Json.dll",
+        "lib/netstandard2.0/System.Text.Json.xml",
+        "system.text.json.4.7.2.nupkg.sha512",
+        "system.text.json.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Text.RegularExpressions/4.3.0": {
       "sha512": "RpT2DA+L660cBt1FssIE9CAGpLFdFPuheB7pLpKpn6ZXNby7jDERe8Ua/Ne2xGiwLVG2JOqziiaVCGDon5sKFA==",
       "type": "package",
@@ -7752,10 +7833,16 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "testingTemp.Shared/1.0.0": {
+      "type": "project",
+      "path": "../testingTemp.Shared/testingTemp.Shared.csproj",
+      "msbuildProject": "../testingTemp.Shared/testingTemp.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "BlazorTransitionableRoute >= 1.0.2",
       "ChartJs.Blazor >= 1.1.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 3.1.5",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.5",
@@ -7763,29 +7850,25 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.5",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.5",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.3",
-      "Syncfusion.Blazor >= 18.2.0.44"
+      "Syncfusion.Blazor >= 18.2.0.44",
+      "testingTemp.Shared >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dvine\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\alist\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dvine\\Documents\\GitHub\\blazorTestingTemp\\testingTemp\\testingTemp\\testingTemp.csproj",
+      "projectUniqueName": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\blazorTestingTemp\\testingTemp\\testingTemp\\testingTemp.csproj",
       "projectName": "testingTemp",
-      "projectPath": "C:\\Users\\Dvine\\Documents\\GitHub\\blazorTestingTemp\\testingTemp\\testingTemp\\testingTemp.csproj",
-      "packagesPath": "C:\\Users\\Dvine\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dvine\\Documents\\GitHub\\blazorTestingTemp\\testingTemp\\testingTemp\\obj\\",
+      "projectPath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\blazorTestingTemp\\testingTemp\\testingTemp\\testingTemp.csproj",
+      "packagesPath": "C:\\Users\\alist\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\blazorTestingTemp\\testingTemp\\testingTemp\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Dvine\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\alist\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -7796,7 +7879,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\blazorTestingTemp\\testingTemp\\testingTemp.Shared\\testingTemp.Shared.csproj": {
+              "projectPath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\blazorTestingTemp\\testingTemp\\testingTemp.Shared\\testingTemp.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -7808,6 +7895,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "BlazorTransitionableRoute": {
+            "target": "Package",
+            "version": "[1.0.2, )"
+          },
           "ChartJs.Blazor": {
             "target": "Package",
             "version": "[1.1.0, )"
@@ -7861,7 +7952,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

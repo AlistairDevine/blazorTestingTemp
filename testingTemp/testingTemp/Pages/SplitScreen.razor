@@ -1,0 +1,114 @@
+﻿@page "/split"
+
+<h3>SplitScreen</h3>
+
+<button type="submit" class="btn btn-primary" @onclick="Split">Split</button>
+
+<div style="@oneStyle">
+    <div class="split left">
+        <div class="centered">
+            <img src="/Images/avatarGirl.png" alt="Avatar woman">
+            <h2>Jane Flex</h2>
+            <p>Some text.</p>
+        </div>
+    </div>
+</div>
+
+@*<div class="split right">
+    <div class="centered">
+        <img src="/Images/avatarMan.png" alt="Avatar man">
+        <h2>John Doe</h2>
+        <p>Some text here too.</p>
+    </div>
+</div>*@
+<style id="one">
+    /* Split the screen in half */
+    .split {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+    /* If you want the content centered horizontally and vertically */
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        background-color: #111;
+    }
+
+        /* Style the image inside the centered container, if needed */
+        .centered img {
+            /*width: 150px;*/
+            border-radius: 50%;
+        }
+</style>
+@*<style id="two">
+    /* Split the screen in half */
+    .split {
+        height: 100%;
+        width: 50%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+
+    /* Control the left side */
+    .left {
+        left: 0;
+        background-color: #111;
+    }
+
+    /* Control the right side */
+    .right {
+        right: 0;
+        background-color: red;
+    }
+
+    /* If you want the content centered horizontally and vertically */
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+        /* Style the image inside the centered container, if needed */
+        .centered img {
+            width: 150px;
+            border-radius: 50%;
+        }
+</style>*@
+
+
+@code {
+
+    public int State = 1;
+
+    public void changeState()
+    {
+        if (State == 1)
+        {
+
+        }
+    }
+
+    string oneStyle;
+    void MyMethod()
+    {
+        oneStyle = "";
+    }
+
+    public void Split()
+    {
+
+    }
+}

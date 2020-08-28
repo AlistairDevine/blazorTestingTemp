@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "xIBBNRynH0rjkBC5QxwG4FL58oADBkH0AYwGy4d34ke+/6G8ZgG/Ahrx4+TDiNZBXH7+hyXYc59IQlRsWriIkg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\blazorTestingTemp\\testingTemp\\testingTemp.API\\testingTemp.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alist\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
+    "C:\\Users\\alist\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512"
+  ],
+  "logs": []
+}

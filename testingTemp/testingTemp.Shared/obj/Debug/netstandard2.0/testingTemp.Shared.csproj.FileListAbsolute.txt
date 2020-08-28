@@ -1,0 +1,9 @@
+C:\Users\alist\OneDrive\Documents\GitHub\blazorTestingTemp\testingTemp\testingTemp.Shared\bin\Debug\netstandard2.0\testingTemp.Shared.deps.json
+C:\Users\alist\OneDrive\Documents\GitHub\blazorTestingTemp\testingTemp\testingTemp.Shared\bin\Debug\netstandard2.0\testingTemp.Shared.dll
+C:\Users\alist\OneDrive\Documents\GitHub\blazorTestingTemp\testingTemp\testingTemp.Shared\obj\Debug\netstandard2.0\testingTemp.Shared.csprojAssemblyReference.cache
+C:\Users\alist\OneDrive\Documents\GitHub\blazorTestingTemp\testingTemp\testingTemp.Shared\obj\Debug\netstandard2.0\testingTemp.Shared.AssemblyInfoInputs.cache
+C:\Users\alist\OneDrive\Documents\GitHub\blazorTestingTemp\testingTemp\testingTemp.Shared\obj\Debug\netstandard2.0\testingTemp.Shared.AssemblyInfo.cs
+C:\Users\alist\OneDrive\Documents\GitHub\blazorTestingTemp\testingTemp\testingTemp.Shared\bin\Debug\netstandard2.0\testingTemp.Shared.pdb
+C:\Users\alist\OneDrive\Documents\GitHub\blazorTestingTemp\testingTemp\testingTemp.Shared\obj\Debug\netstandard2.0\testingTemp.Shared.csproj.CoreCompileInputs.cache
+C:\Users\alist\OneDrive\Documents\GitHub\blazorTestingTemp\testingTemp\testingTemp.Shared\obj\Debug\netstandard2.0\testingTemp.Shared.dll
+C:\Users\alist\OneDrive\Documents\GitHub\blazorTestingTemp\testingTemp\testingTemp.Shared\obj\Debug\netstandard2.0\testingTemp.Shared.pdb

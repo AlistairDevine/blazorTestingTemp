@@ -19,6 +19,7 @@ using EndToEnd.Data;
 using testingTemp.SessionState;
 using Syncfusion.Blazor;
 
+
 namespace testingTemp
 {
     public class Startup
@@ -48,6 +49,10 @@ namespace testingTemp
             services.AddScoped<BookDataService>();
             services.AddScoped<CounterState>();
             services.AddSyncfusionBlazor();
+            services.AddHttpClient<Services.ApiService>(client =>
+            {
+                client.BaseAddress = new Uri("http://localhost:5001");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
