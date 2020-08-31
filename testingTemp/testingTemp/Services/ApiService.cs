@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text.Json;
@@ -14,13 +15,14 @@ namespace testingTemp.Services
         {
             _httpClient = httpClient;
         }
+        string Message = "";
         public async Task<List<Contact>> GetContactsAsync()
         {
             var response = await _httpClient.GetAsync("api/contacts");
             response.EnsureSuccessStatusCode();
 
             using var responseContent = await response.Content.ReadAsStreamAsync();
-            return await System.Text.Json.JsonSerializer.DeserializeAsync<List<Contact>>(responseContent); 
+            return await System.Text.Json.JsonSerializer.DeserializeAsync<List<Contact>>(responseContent);
         }
         public async Task<Contact> GetContactById(int id)
         {
