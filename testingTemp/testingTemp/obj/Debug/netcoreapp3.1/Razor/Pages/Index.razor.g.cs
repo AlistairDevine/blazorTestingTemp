@@ -100,6 +100,13 @@ using BlazorTransitionableRoute;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 14 "C:\Users\alist\OneDrive\Documents\GitHub\blazorTestingTemp\testingTemp\testingTemp\_Imports.razor"
+using Blazorme;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {

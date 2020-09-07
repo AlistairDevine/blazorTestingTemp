@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "Blazorme.Split/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "3.1.5",
+          "Microsoft.AspNetCore.Components.Web": "3.1.5"
+        },
+        "compile": {
+          "lib/netstandard2.1/Split.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Split.dll": {}
+        }
+      },
       "BlazorTransitionableRoute/1.0.2": {
         "type": "package",
         "dependencies": {
@@ -2319,6 +2332,19 @@
     }
   },
   "libraries": {
+    "Blazorme.Split/1.0.0": {
+      "sha512": "ZHVsYQNrYPok8VXAR7p1LnZYHpXmJL+fEqBAC8okymHknrBpPPZdMXj2wCvbRCDv6acmgPTWLblcg8jodxuHTQ==",
+      "type": "package",
+      "path": "blazorme.split/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "blazorme.split.1.0.0.nupkg.sha512",
+        "blazorme.split.nuspec",
+        "lib/netstandard2.1/Split.dll",
+        "me.png"
+      ]
+    },
     "BlazorTransitionableRoute/1.0.2": {
       "sha512": "imHlljjw2aLcfZwqMlvMTyUROV4/wQ2lJqOMdcNCjExq3erE1VSel7AglyzNvOIDJYrNq+iy/KE3kvAHljR6Vg==",
       "type": "package",
@@ -7843,6 +7869,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "BlazorTransitionableRoute >= 1.0.2",
+      "Blazorme.Split >= 1.0.0",
       "ChartJs.Blazor >= 1.1.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 3.1.5",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.5",
@@ -7898,6 +7925,10 @@
           "BlazorTransitionableRoute": {
             "target": "Package",
             "version": "[1.0.2, )"
+          },
+          "Blazorme.Split": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           },
           "ChartJs.Blazor": {
             "target": "Package",

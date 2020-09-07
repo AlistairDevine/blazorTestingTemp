@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "testingTemp", "testingTemp\testingTemp.csproj", "{40FECD69-C6ED-47EE-8FAA-C0D0F733A5AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testingTemp.Shared", "testingTemp.Shared\testingTemp.Shared.csproj", "{B5288579-A1FC-46B7-AEEB-24307A30CABD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "testingTemp.Shared", "testingTemp.Shared\testingTemp.Shared.csproj", "{B5288579-A1FC-46B7-AEEB-24307A30CABD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testingTemp.API", "testingTemp.API\testingTemp.API.csproj", "{0BC0269D-7BC0-4977-BA42-49AA65F87143}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "testingTemp.API", "testingTemp.API\testingTemp.API.csproj", "{0BC0269D-7BC0-4977-BA42-49AA65F87143}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

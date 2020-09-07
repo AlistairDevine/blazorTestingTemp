@@ -1,114 +1,112 @@
 ﻿@page "/split"
 
+@using Blazorme
+
 <h3>SplitScreen</h3>
 
-<button type="submit" class="btn btn-primary" @onclick="Split">Split</button>
+<!--Get screen size to display the split function at the correct size for the user-->
 
-<div style="@oneStyle">
-    <div class="split left">
-        <div class="centered">
-            <img src="/Images/avatarGirl.png" alt="Avatar woman">
-            <h2>Jane Flex</h2>
-            <p>Some text.</p>
-        </div>
-    </div>
+<style>
+    a.button1 {
+        border: 0.1em solid #000000;
+        border-radius: 0.12em;
+        box-sizing: border-box;
+        color: #000000;
+    }
+        a.button1:hover {
+            color: #FFFFFF;
+            background-color: #000000;
+        }
+    .container-pane {
+        padding: 70px 0;
+        vertical-align: middle
+    }
+</style>
+
+<div class="container-fluid border border-primary" style="text-align:center; width: 100%; height:600px">
+    <Split>
+        <SplitPane SizeInPercentage="33" MinSize="0">
+            <Split Direction="@SplitDirection.Vertical" GutterSize="5">
+                <SplitPane MinSize="0">
+                    <div class="container-pane">
+                        <a id="onePane" class="oi oi-plus btn button1" aria-hidden="true" @onclick="ShowPopup" style="border-radius:35%; padding:50px"></a>
+                    </div>
+                </SplitPane>
+                <SplitPane MinSize="0">
+                    <div class="container-pane">
+                        <a id="twoPane" class="oi oi-plus btn button1" aria-hidden="true" @onclick="ShowPopup" style="border-radius:35%; padding:50px"></a>
+                    </div>
+                </SplitPane>
+            </Split>
+        </SplitPane>
+        <SplitPane SizeInPercentage="33" MinSize="0">
+            <Split Direction="@SplitDirection.Vertical" GutterSize="5">
+                <SplitPane MinSize="0">
+                    <div class="container-pane">
+                        <a id="threePane" class="oi oi-plus btn button1" aria-hidden="true" @onclick="ShowPopup" style="border-radius:35%; padding:50px"></a>
+                    </div>
+                </SplitPane>
+                <SplitPane MinSize="0">
+                    <div class="container-pane">
+                        <a id="fourPane" class="oi oi-plus btn button1" aria-hidden="true" @onclick="ShowPopup" style="border-radius:35%; padding:50px"></a>
+                    </div>
+                </SplitPane>
+            </Split>
+        </SplitPane>
+        <SplitPane SizeInPercentage="33" MinSize="0">
+            <Split Direction="@SplitDirection.Vertical" GutterSize="5">
+                <SplitPane MinSize="0">
+                    <div class="container-pane">
+                        <a id="fivePane" class="oi oi-plus btn button1" aria-hidden="true" @onclick="ShowPopup" style="border-radius:35%; padding:50px"></a>
+                    </div>
+                </SplitPane>
+                <SplitPane MinSize="0">
+                    <div class="container-pane">
+                        <a id="sixPane" class="oi oi-plus btn button1" aria-hidden="true" @onclick="ShowPopup" style="border-radius:35%; padding:50px"></a>
+                    </div>
+                </SplitPane>
+            </Split>
+        </SplitPane>
+    </Split>
 </div>
 
-@*<div class="split right">
-    <div class="centered">
-        <img src="/Images/avatarMan.png" alt="Avatar man">
-        <h2>John Doe</h2>
-        <p>Some text here too.</p>
+@if (imagePopup)
+{
+    <div class="modal" tabindex="-1" style="display:block" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Select image </h3>
+                    <!--Button to close the popup-->
+                    <button type="button" class="close" @onclick="ClosePopup">
+                        <span aria-hidden="true">X</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <select class="form-control selectpicker">
+                        <option>--Select--</option>
+                        @*@foreach (var item in Item)
+                        {
+                            <option value="@item.id">@item.Name</option>
+                        }*@
+                    </select>
+                </div>
+            </div>
+        </div>
     </div>
-</div>*@
-<style id="one">
-    /* Split the screen in half */
-    .split {
-        height: 100%;
-        width: 100%;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        overflow-x: hidden;
-        padding-top: 20px;
-    }
-    /* If you want the content centered horizontally and vertically */
-    .centered {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        background-color: #111;
-    }
-
-        /* Style the image inside the centered container, if needed */
-        .centered img {
-            /*width: 150px;*/
-            border-radius: 50%;
-        }
-</style>
-@*<style id="two">
-    /* Split the screen in half */
-    .split {
-        height: 100%;
-        width: 50%;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        overflow-x: hidden;
-        padding-top: 20px;
-    }
-
-    /* Control the left side */
-    .left {
-        left: 0;
-        background-color: #111;
-    }
-
-    /* Control the right side */
-    .right {
-        right: 0;
-        background-color: red;
-    }
-
-    /* If you want the content centered horizontally and vertically */
-    .centered {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
-
-        /* Style the image inside the centered container, if needed */
-        .centered img {
-            width: 150px;
-            border-radius: 50%;
-        }
-</style>*@
+}
 
 
 @code {
+    bool imagePopup = false;
 
-    public int State = 1;
-
-    public void changeState()
+    void ClosePopup()
     {
-        if (State == 1)
-        {
-
-        }
+        imagePopup = false;
     }
 
-    string oneStyle;
-    void MyMethod()
+    void ShowPopup()
     {
-        oneStyle = "";
-    }
-
-    public void Split()
-    {
-
+        imagePopup = true;
     }
 }

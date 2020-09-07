@@ -109,6 +109,10 @@
               "target": "Package",
               "version": "[1.0.2, )"
             },
+            "Blazorme.Split": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "ChartJs.Blazor": {
               "target": "Package",
               "version": "[1.1.0, )"

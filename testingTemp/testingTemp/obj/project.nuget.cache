@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5eHdChOG6OcqZ5h4OAtoMoN6hD482hs4zIpiQMcWiCcG4yTsfQoD54UDnrKXXDyVSk+VW6BulUXzSp2Op0tT0g==",
+  "dgSpecHash": "KvenE47MU4RsKKtmiIShd/T0YEM/RLnRkJupyVsTFpZGLE6bnRa5oBeQ1JpbnVaMJfJlUiR5CO3zNGd6tmFlVg==",
   "success": true,
   "projectFilePath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\blazorTestingTemp\\testingTemp\\testingTemp\\testingTemp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\alist\\.nuget\\packages\\blazorme.split\\1.0.0\\blazorme.split.1.0.0.nupkg.sha512",
     "C:\\Users\\alist\\.nuget\\packages\\blazortransitionableroute\\1.0.2\\blazortransitionableroute.1.0.2.nupkg.sha512",
     "C:\\Users\\alist\\.nuget\\packages\\chartjs.blazor\\1.1.0\\chartjs.blazor.1.1.0.nupkg.sha512",
     "C:\\Users\\alist\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.1.5\\microsoft.aspnetcore.authorization.3.1.5.nupkg.sha512",
